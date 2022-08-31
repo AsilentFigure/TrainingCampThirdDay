@@ -10,7 +10,7 @@ import java.util.Arrays;
  */
 public class MinIncrementForUnique {
 
-    public int minIncrementForUnique(int[] nums) {
+    public int minIncrementForUnique1(int[] nums) {
         if(nums.length <= 1){
             return 0;
         }
@@ -27,5 +27,18 @@ public class MinIncrementForUnique {
             count++;
         }
         return count;
+    }
+
+    public int minIncrementForUnique(int[] nums) {
+        int result = 0;
+        Arrays.sort(nums);
+        for(int i = 1; i < nums.length;i++){
+            if(nums[i] <= nums[i - 1]){
+                int pre = nums[i];
+                nums[i] = nums[i - 1]+1;
+                result += nums[i] - pre;
+            }
+        }
+        return result;
     }
 }

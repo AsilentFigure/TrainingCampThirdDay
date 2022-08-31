@@ -10,9 +10,11 @@ import solution.*;
 public class TrainingCampThirdDay {
 
     public static void main(String[] args) {
-        int [] nums = {3,2,3,1,2,4,5,5,6};
+        int [] nums = {3};
         String s = "loveleetcode";
         FrequencySort frequencySort = new FrequencySort();
-        System.out.println(frequencySort.frequencySort(s));
+        // System.out.println(frequencySort.frequencySort(s));
+        MinIncrementForUnique minIncrementForUnique = new MinIncrementForUnique();
+        System.out.println(minIncrementForUnique.minIncrementForUnique(nums));
     }
 }
